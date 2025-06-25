@@ -6,7 +6,7 @@ spring:
       chat: deepseek
 
     deepseek:
-      api-key: sk-bb493e6ab1854f229b44551bfeafed5f
+      api-key: sk-xx
       base-url: https://api.deepseek.com
       chat:
         options:
