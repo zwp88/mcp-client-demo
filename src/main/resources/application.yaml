@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: mcp
+  ai:
+    model:
+      chat: deepseek
+
+    deepseek:
+      api-key: sk-bb493e6ab1854f229b44551bfeafed5f
+      base-url: https://api.deepseek.com
+      chat:
+        options:
+          model: deepseek-chat
+
+    mcp:
+      client:
+        toolcallback:
+          enabled: true
+        #        stdio:
+#          servers-configuration: classpath:mcp-servers.json
+
+        sse:
+          connections:
+            server1:
+              url: http://localhost:8090
+              sse-endpoint: /sse
+
+
+logging:
+  pattern:
+    console: '%d{yyyy-MMM-dd HH:mm:ss.SSS} |%-5level| ${traceId}|${spring.application.name}|[%thread] %logger line:%-3L - %msg%n'
+  file:
+    name: ./spring-ai-mcp-client.demo.log
+    path: concreteness/logs
+  level:
+    org.springframework.ai: debug
+    com.example: debug
+    io.modelcontextprotocol: debug
+
+
+
+
